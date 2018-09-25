@@ -3,9 +3,25 @@
 
 // moving functions using vectors
 // i hope i won't have to use this code a lot
+// i really hate maths man
 
-func movePoint(point: (x: Int, y: Int), operations: (lr: Int, ud: Int), absolute: String) {
-    // i really hate maths man
+import Foundation
+
+class Model {
+    var y: Double = 0
+    var x: Double = 0
+}
+
+func getFunctionModel (x: Double) -> Double {
+    let model = Model()
+    model.x = x
+    model.y = pow(Double(0.25 * x), Double(2))
+    
+    print(model.y)
+    return model.y
+}
+
+func moveFunctionPoint(point: (x: Int, y: Int), operations: (lr: Int, ud: Int), absolute: String) {
     // sample point that is part of the function
     point
     print(point, " \n \n | \n | \n V \n")
@@ -49,4 +65,5 @@ func movePoint(point: (x: Int, y: Int), operations: (lr: Int, ud: Int), absolute
     print(newPoint)
 }
 
-movePoint(point: (x: 1, y: 2), operations: (lr: -2, ud: 0), absolute: "on_func_whole")
+moveFunctionPoint(point: (x: 1, y: 2), operations: (lr: -2, ud: 0), absolute: "on_func_whole")
+getFunctionModel(x: 6)
